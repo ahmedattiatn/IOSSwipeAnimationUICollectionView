@@ -1,5 +1,5 @@
 //
-//  OverlapCollectionViewController.swift
+//  OverlapCustomCollectionViewController.swift
 //  IOSSwipeAnimationUICollectionView
 //
 //  Created by Ahmed ATIA on 16/10/2018.
@@ -10,7 +10,7 @@ import UIKit
 
 private let reuseIdentifier = "OverlapCollectionViewCell"
 
-class OverlapCollectionViewController: UICollectionViewController {
+class OverlapCustomCollectionViewController: UICollectionViewController {
     
     private var numberOfItems = 10
     var navbarSize = CGFloat()
@@ -99,4 +99,3 @@ class OverlapCollectionViewController: UICollectionViewController {
         self.collectionView?.deleteItems(at: [IndexPath(item: removalIndex, section: 0)])
     }
 }
-

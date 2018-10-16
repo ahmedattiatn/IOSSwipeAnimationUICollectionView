@@ -59,7 +59,7 @@ class OverlapCollectionViewLayout: UICollectionViewLayout {
         let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath as IndexPath)
         
         attributes.size = preferredSize
-        let centerY = preferredSize.width / 2.0 + CGFloat(indexPath.item) * centerDiff + 150 // 100
+        let centerY = preferredSize.width / 2.0 + CGFloat(indexPath.item) * centerDiff + 160 // 100
         let centerX = collectionView!.bounds.midX//collectionView!.bounds.height / 2.0
         attributes.center = CGPoint(x:centerX, y:centerY)
         attributes.zIndex = numberOfItems - 1 - indexPath.item

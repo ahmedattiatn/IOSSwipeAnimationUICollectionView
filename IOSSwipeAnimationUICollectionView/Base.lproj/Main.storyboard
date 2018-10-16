@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Overlap Collection View Controller-->
+        <!--Overlap Custom Collection View Controller-->
         <scene sceneID="15w-AR-i0m">
             <objects>
-                <collectionViewController id="5Ns-nB-lBO" customClass="OverlapCollectionViewController" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="5Ns-nB-lBO" customClass="OverlapCustomCollectionViewController" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="62w-wy-Xw4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,14 +19,14 @@
                         <collectionViewLayout key="collectionViewLayout" id="aEq-my-daP" customClass="OverlapCollectionViewLayout" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OverlapCollectionViewCell" id="acb-7E-CU3" customClass="OverlapCollectionViewCell" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target">
-                                <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
+                                <rect key="frame" x="52" y="0.0" width="271" height="253"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="271" height="253"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-vA-JhI">
-                                            <rect key="frame" x="44" y="65" width="112" height="70"/>
+                                            <rect key="frame" x="79.5" y="91.5" width="112" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="g0X-0V-42m"/>
                                             </constraints>
@@ -34,14 +34,23 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the card Number :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44D-nw-kY4">
+                                            <rect key="frame" x="29" y="64.5" width="213" height="21"/>
+                                            <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="19"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="a1g-vA-JhI" firstAttribute="top" secondItem="44D-nw-kY4" secondAttribute="bottom" constant="6" id="D2G-qI-FHx"/>
                                     <constraint firstItem="a1g-vA-JhI" firstAttribute="centerY" secondItem="acb-7E-CU3" secondAttribute="centerY" id="eha-ES-qIE"/>
+                                    <constraint firstItem="44D-nw-kY4" firstAttribute="centerX" secondItem="a1g-vA-JhI" secondAttribute="centerX" id="iwu-To-j6b"/>
                                     <constraint firstItem="a1g-vA-JhI" firstAttribute="centerX" secondItem="acb-7E-CU3" secondAttribute="centerX" id="jMD-iT-dsZ"/>
+                                    <constraint firstItem="44D-nw-kY4" firstAttribute="centerX" secondItem="a1g-vA-JhI" secondAttribute="centerX" id="m4p-1b-DFc"/>
                                 </constraints>
-                                <size key="customSize" width="200" height="200"/>
+                                <size key="customSize" width="271" height="253"/>
                                 <connections>
                                     <outlet property="title" destination="a1g-vA-JhI" id="T2J-EH-JLw"/>
                                 </connections>
@@ -67,7 +76,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QB2-zZ-9n5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1167" y="441"/>
+            <point key="canvasLocation" x="1165.5999999999999" y="440.32983508245883"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G4l-zr-6vM">

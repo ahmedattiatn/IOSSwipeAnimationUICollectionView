@@ -24,7 +24,7 @@ class OverlapCollectionViewCell: UICollectionViewCell {
     }
     
     private func commonInit() {
-        layer.cornerRadius = 15
+        layer.cornerRadius = 10
         layer.borderWidth = 0.5
         layer.borderColor = UIColor.black.cgColor
     }
