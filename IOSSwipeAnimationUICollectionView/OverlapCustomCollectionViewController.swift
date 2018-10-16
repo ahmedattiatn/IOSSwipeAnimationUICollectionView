@@ -37,16 +37,18 @@ class OverlapCustomCollectionViewController: UICollectionViewController {
     @objc func panGestureFired(sender: UIPanGestureRecognizer) {
         if let card = sender.view {
             let point = sender.translation(in: view)
-            card.center = CGPoint(x: view.center.x + point.x , y: view.center.y + point.y - navbarSize)
+            card.center = CGPoint(x: view.center.x, y: view.center.y + point.y - navbarSize)
             // - navbarSize :taille de navBar, il faut prendre en consideration Y par raport a la NavBar donc si on na pas de NavBar on fait pas le - navbarSize
-            let xFromCenter = card.center.x - view.center.x
+            let yFromCenter = card.center.y - view.center.y + navbarSize
             // example to rotate: 100 /2 = 50/0.61 = 81.967
-            let scale = min(100/abs(xFromCenter),1)
+            let scale = min(100/abs(yFromCenter),1)
             // Anything above one will increase the size and under 1 will deacrese the size
-            card.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor).scaledBy(x: scale, y: scale)
-            card.alpha = 1 - (abs(xFromCenter) / view.center.x)
+            card.transform = CGAffineTransform(scaleX: scale, y: scale)
+            card.alpha = 1 - (abs(yFromCenter) / view.center.y)
+            
             if sender.state == UIGestureRecognizer.State.ended {
-                if card.center.x < 75 {
+                
+                if card.center.y  < 75 {
                     //Move off to the left side of the screen
                     UIView.animate(withDuration: 0.3) {
                         //card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75 )
@@ -55,15 +57,17 @@ class OverlapCustomCollectionViewController: UICollectionViewController {
                     }
                     return
                 }
-                else if card.center.x > view.frame.width - 75 {
-                    //Move off to the right side of the screen
-                    UIView.animate(withDuration: 0.3) {
-                        //card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
-                        card.alpha = 0
-                        self.removeCell()
-                    }
-                    return
-                }
+                
+                /*else if card.center.y  > view.frame.width - 75 {
+                 //Move off to the right side of the screen
+                 UIView.animate(withDuration: 0.3) {
+                 //card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
+                 card.alpha = 0
+                 self.removeCell()
+                 }
+                 return
+                 }*/
+                
                 //return the card to the Original place
                 UIView.animate(withDuration: 0.2) {
                     card.center = CGPoint(x: self.view.center.x , y: self.view.center.y - self.navbarSize)
