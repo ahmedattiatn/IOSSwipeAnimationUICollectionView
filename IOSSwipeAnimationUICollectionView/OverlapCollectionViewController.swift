@@ -13,6 +13,11 @@ private let reuseIdentifier = "OverlapCollectionViewCell"
 class OverlapCollectionViewController: UICollectionViewController {
     
     private var numberOfItems = 10
+    var navbarSize = CGFloat()
+    
+    override func viewDidAppear(_ animated: Bool) {
+        navbarSize = navigationController?.navigationBar.frame.maxY ?? 64
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return numberOfItems
@@ -28,7 +33,7 @@ class OverlapCollectionViewController: UICollectionViewController {
     @objc func panGestureFired(sender: UIPanGestureRecognizer) {
         if let card = sender.view {
             let point = sender.translation(in: view)
-            card.center = CGPoint(x: view.center.x + point.x, y: view.center.y + point.y)
+            card.center = CGPoint(x: view.center.x + point.x , y: view.center.y + point.y - navbarSize ) // taille de navBar
             if sender.state == UIGestureRecognizer.State.ended {
                 UIView.animate(withDuration: 0.3) {
                     card.alpha = 0
