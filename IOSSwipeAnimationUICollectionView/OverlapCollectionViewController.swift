@@ -32,12 +32,8 @@ class OverlapCollectionViewController: UICollectionViewController {
             if sender.state == UIGestureRecognizer.State.ended {
                 UIView.animate(withDuration: 0.3) {
                     card.alpha = 0
-                    guard self.numberOfItems > 0 else { return }
-                    self.numberOfItems -= 1
-                    let removalIndex = Int(0) //la Cell suivante devient le 0 dans le collectionview apres suprimer
-                    self.collectionView?.deleteItems(at: [IndexPath(item: removalIndex, section: 0)])
+                    self.removeCell()
                 }
-                print("Remove Cell ")
             }
         }
     }
@@ -54,6 +50,17 @@ class OverlapCollectionViewController: UICollectionViewController {
         numberOfItems -= 1
         let removalIndex = Int(arc4random() % UInt32(max(numberOfItems, 1)))
         collectionView?.deleteItems(at: [IndexPath(item: removalIndex, section: 0)])
+    }
+    
+    func removeCell() {
+        guard self.numberOfItems > 0 else {
+            print("No Cell To Remove!")
+            return
+            
+        }
+        self.numberOfItems -= 1
+        let removalIndex = Int(0) //la Cell suivante devient le 0 dans le collectionview apres suprimer
+        self.collectionView?.deleteItems(at: [IndexPath(item: removalIndex, section: 0)])
     }
 }
 
