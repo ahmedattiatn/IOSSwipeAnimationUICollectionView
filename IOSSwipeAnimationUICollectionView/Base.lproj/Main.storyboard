@@ -1,86 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14313.18" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mqc-Tq-uG4">
-<device id="retina4_7" orientation="portrait">
-<adaptation id="fullscreen"/>
-</device>
-<dependencies>
-<deployment identifier="iOS"/>
-<plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
-<capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
-</dependencies>
-<scenes>
-<!--Overlap Collection View Controller-->
-<scene sceneID="15w-AR-i0m">
-<objects>
-<collectionViewController id="5Ns-nB-lBO" customClass="OverlapCollectionViewController" customModule="CollectionViewCustomInsertion" customModuleProvider="target" sceneMemberID="viewController">
-<collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="62w-wy-Xw4">
-<rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-<autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-<color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
-<collectionViewLayout key="collectionViewLayout" id="aEq-my-daP" customClass="OverlapCollectionViewLayout" customModule="CollectionViewCustomInsertion" customModuleProvider="target"/>
-<cells>
-<collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OverlapCollectionViewCell" id="acb-7E-CU3" customClass="OverlapCollectionViewCell" customModule="CollectionViewCustomInsertion" customModuleProvider="target">
-<rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-<rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
-<autoresizingMask key="autoresizingMask"/>
-<subviews>
-<label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-vA-JhI">
-<rect key="frame" x="79" y="90" width="42" height="21"/>
-<autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-<fontDescription key="fontDescription" type="system" pointSize="17"/>
-<nil key="textColor"/>
-<nil key="highlightedColor"/>
-</label>
-</subviews>
-</view>
-<color key="backgroundColor" red="0.79989252649999998" green="0.0" blue="0.061590704429999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-<size key="customSize" width="200" height="200"/>
-<connections>
-<outlet property="title" destination="a1g-vA-JhI" id="T2J-EH-JLw"/>
-</connections>
-</collectionViewCell>
-</cells>
-<connections>
-<outlet property="dataSource" destination="5Ns-nB-lBO" id="iEu-YL-Je4"/>
-<outlet property="delegate" destination="5Ns-nB-lBO" id="vnD-AQ-SnE"/>
-</connections>
-</collectionView>
-<navigationItem key="navigationItem" id="PUB-05-7Ss">
-<barButtonItem key="leftBarButtonItem" title="Add" id="gRD-SR-cdz">
-<connections>
-<action selector="didTapAddWithSender:" destination="5Ns-nB-lBO" id="zEn-4W-NXU"/>
-</connections>
-</barButtonItem>
-<barButtonItem key="rightBarButtonItem" title="Remove" id="SZ4-Tv-zfc">
-<connections>
-<action selector="didTapRemoveWithSender:" destination="5Ns-nB-lBO" id="Gr1-VX-U51"/>
-</connections>
-</barButtonItem>
-</navigationItem>
-</collectionViewController>
-<placeholder placeholderIdentifier="IBFirstResponder" id="QB2-zZ-9n5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-</objects>
-<point key="canvasLocation" x="1167" y="441"/>
-</scene>
-<!--Navigation Controller-->
-<scene sceneID="G4l-zr-6vM">
-<objects>
-<navigationController automaticallyAdjustsScrollViewInsets="NO" id="mqc-Tq-uG4" sceneMemberID="viewController">
-<toolbarItems/>
-<navigationBar key="navigationBar" contentMode="scaleToFill" id="TQ3-JE-XFk">
-<rect key="frame" x="0.0" y="20" width="375" height="44"/>
-<autoresizingMask key="autoresizingMask"/>
-</navigationBar>
-<nil name="viewControllers"/>
-<connections>
-<segue destination="5Ns-nB-lBO" kind="relationship" relationship="rootViewController" id="iBf-5s-TbT"/>
-</connections>
-</navigationController>
-<placeholder placeholderIdentifier="IBFirstResponder" id="s7A-WY-pHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-</objects>
-<point key="canvasLocation" x="388" y="441"/>
-</scene>
-</scenes>
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14283.14"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Overlap Collection View Controller-->
+        <scene sceneID="15w-AR-i0m">
+            <objects>
+                <collectionViewController id="5Ns-nB-lBO" customClass="OverlapCollectionViewController" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="62w-wy-Xw4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <collectionViewLayout key="collectionViewLayout" id="aEq-my-daP" customClass="OverlapCollectionViewLayout" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target"/>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OverlapCollectionViewCell" id="acb-7E-CU3" customClass="OverlapCollectionViewCell" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target">
+                                <rect key="frame" x="87.5" y="0.0" width="200" height="200"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-vA-JhI">
+                                            <rect key="frame" x="44" y="65" width="112" height="70"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="70" id="g0X-0V-42m"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" name="Rockwell-Regular" family="Rockwell" pointSize="40"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </view>
+                                <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstItem="a1g-vA-JhI" firstAttribute="centerY" secondItem="acb-7E-CU3" secondAttribute="centerY" id="eha-ES-qIE"/>
+                                    <constraint firstItem="a1g-vA-JhI" firstAttribute="centerX" secondItem="acb-7E-CU3" secondAttribute="centerX" id="jMD-iT-dsZ"/>
+                                </constraints>
+                                <size key="customSize" width="200" height="200"/>
+                                <connections>
+                                    <outlet property="title" destination="a1g-vA-JhI" id="T2J-EH-JLw"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="5Ns-nB-lBO" id="iEu-YL-Je4"/>
+                            <outlet property="delegate" destination="5Ns-nB-lBO" id="vnD-AQ-SnE"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="PUB-05-7Ss">
+                        <barButtonItem key="leftBarButtonItem" title="Add" id="gRD-SR-cdz">
+                            <connections>
+                                <action selector="didTapAddWithSender:" destination="5Ns-nB-lBO" id="zEn-4W-NXU"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Remove" id="SZ4-Tv-zfc">
+                            <connections>
+                                <action selector="didTapRemoveWithSender:" destination="5Ns-nB-lBO" id="Gr1-VX-U51"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QB2-zZ-9n5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167" y="441"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="G4l-zr-6vM">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mqc-Tq-uG4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TQ3-JE-XFk">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="5Ns-nB-lBO" kind="relationship" relationship="rootViewController" id="iBf-5s-TbT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s7A-WY-pHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="388" y="441"/>
+        </scene>
+    </scenes>
 </document>
