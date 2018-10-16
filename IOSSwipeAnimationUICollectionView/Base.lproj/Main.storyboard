@@ -19,14 +19,14 @@
                         <collectionViewLayout key="collectionViewLayout" id="aEq-my-daP" customClass="OverlapCollectionViewLayout" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target"/>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="OverlapCollectionViewCell" id="acb-7E-CU3" customClass="OverlapCollectionViewCell" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target">
-                                <rect key="frame" x="52" y="0.0" width="271" height="253"/>
+                                <rect key="frame" x="58" y="0.0" width="259" height="457"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="271" height="253"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="259" height="457"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-vA-JhI">
-                                            <rect key="frame" x="79.5" y="91.5" width="112" height="70"/>
+                                            <rect key="frame" x="73.5" y="241.5" width="112" height="70"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="70" id="g0X-0V-42m"/>
                                             </constraints>
@@ -35,23 +35,29 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This is the card Number :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44D-nw-kY4">
-                                            <rect key="frame" x="29" y="64.5" width="213" height="21"/>
+                                            <rect key="frame" x="23" y="214.5" width="213" height="21"/>
                                             <fontDescription key="fontDescription" name="Palatino-Roman" family="Palatino" pointSize="19"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balloon-condition" translatesAutoresizingMaskIntoConstraints="NO" id="xRd-hS-wm6">
+                                            <rect key="frame" x="93.5" y="86.5" width="72" height="118"/>
+                                        </imageView>
                                     </subviews>
                                 </view>
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="a1g-vA-JhI" firstAttribute="top" secondItem="44D-nw-kY4" secondAttribute="bottom" constant="6" id="D2G-qI-FHx"/>
-                                    <constraint firstItem="a1g-vA-JhI" firstAttribute="centerY" secondItem="acb-7E-CU3" secondAttribute="centerY" id="eha-ES-qIE"/>
+                                    <constraint firstItem="xRd-hS-wm6" firstAttribute="centerX" secondItem="a1g-vA-JhI" secondAttribute="centerX" id="NfF-3Y-seq"/>
+                                    <constraint firstItem="a1g-vA-JhI" firstAttribute="centerY" secondItem="acb-7E-CU3" secondAttribute="centerY" constant="48" id="eha-ES-qIE"/>
                                     <constraint firstItem="44D-nw-kY4" firstAttribute="centerX" secondItem="a1g-vA-JhI" secondAttribute="centerX" id="iwu-To-j6b"/>
                                     <constraint firstItem="a1g-vA-JhI" firstAttribute="centerX" secondItem="acb-7E-CU3" secondAttribute="centerX" id="jMD-iT-dsZ"/>
                                     <constraint firstItem="44D-nw-kY4" firstAttribute="centerX" secondItem="a1g-vA-JhI" secondAttribute="centerX" id="m4p-1b-DFc"/>
+                                    <constraint firstItem="44D-nw-kY4" firstAttribute="top" secondItem="xRd-hS-wm6" secondAttribute="bottom" constant="10" id="tWY-Ip-z3k"/>
                                 </constraints>
-                                <size key="customSize" width="271" height="253"/>
+                                <size key="customSize" width="259" height="457"/>
                                 <connections>
+                                    <outlet property="image" destination="xRd-hS-wm6" id="xtW-mi-hVo"/>
                                     <outlet property="title" destination="a1g-vA-JhI" id="T2J-EH-JLw"/>
                                 </connections>
                             </collectionViewCell>
@@ -97,4 +103,7 @@
             <point key="canvasLocation" x="388" y="441"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="balloon-condition" width="72" height="118"/>
+    </resources>
 </document>

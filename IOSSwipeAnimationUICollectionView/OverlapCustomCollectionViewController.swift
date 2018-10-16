@@ -15,6 +15,7 @@ class OverlapCustomCollectionViewController: UICollectionViewController {
     private var numberOfItems = 10
     var navbarSize = CGFloat()
     var divisor: CGFloat!
+    var imageList: [String] = ["balloon_0003", "balloon_0004","balloon_0005","balloon_0008", "balloon_0010","balloon_0011","balloon_0012", "balloon_0014","balloon_0005","balloon_0003"]
     
     override func viewDidAppear(_ animated: Bool) {
         divisor = (view.frame.width / 2) / 0.61
@@ -29,6 +30,7 @@ class OverlapCustomCollectionViewController: UICollectionViewController {
         let cell =  collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath as IndexPath) as! OverlapCollectionViewCell
         cell.addGestureRecognizer(UIPanGestureRecognizer.init(target:self, action: #selector(OverlapCollectionViewController.panGestureFired)))
         cell.title.text = String(indexPath.item)
+        cell.image.image = UIImage(named: imageList[indexPath.row])
         return cell
     }
     
