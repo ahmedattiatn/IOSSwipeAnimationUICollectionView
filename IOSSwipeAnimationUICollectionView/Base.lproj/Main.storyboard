@@ -8,10 +8,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Overlap Custom Collection View Controller-->
+        <!--Overlap Collection View Controller-->
         <scene sceneID="15w-AR-i0m">
             <objects>
-                <collectionViewController id="5Ns-nB-lBO" customClass="OverlapCustomCollectionViewController" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
+                <collectionViewController id="5Ns-nB-lBO" customClass="OverlapCollectionViewController" customModule="IOSSwipeAnimationUICollectionView" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" id="62w-wy-Xw4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
