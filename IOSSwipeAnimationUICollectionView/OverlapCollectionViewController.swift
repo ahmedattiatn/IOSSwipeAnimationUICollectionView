@@ -12,9 +12,12 @@ private let reuseIdentifier = "OverlapCollectionViewCell"
 
 class OverlapCollectionViewController: UICollectionViewController {
     
-    private var numberOfItems = 10
+    private var numberOfItems = 5
     var navbarSize = CGFloat()
     var divisor: CGFloat!
+    var curentIndex = 0
+    var tabcard = [UIView](repeating: UIView(), count: 5)
+    
     var imageList: [String] = ["balloon_0003", "balloon_0004","balloon_0005","balloon_0008", "balloon_0010","balloon_0011","balloon_0012", "balloon_0014","balloon_0005","balloon_0003"]
     
     override func viewDidAppear(_ animated: Bool) {
@@ -36,6 +39,7 @@ class OverlapCollectionViewController: UICollectionViewController {
     
     @objc func panGestureFired(sender: UIPanGestureRecognizer) {
         if let card = sender.view {
+            tabcard[curentIndex] = card
             let point = sender.translation(in: view)
             card.center = CGPoint(x: view.center.x + point.x , y: view.center.y + point.y - navbarSize)
             // - navbarSize :taille de navBar, il faut prendre en consideration Y par raport a la NavBar donc si on na pas de NavBar on fait pas le - navbarSize
@@ -45,22 +49,35 @@ class OverlapCollectionViewController: UICollectionViewController {
             // Anything above one will increase the size and under 1 will deacrese the size
             card.transform = CGAffineTransform(rotationAngle: xFromCenter/divisor).scaledBy(x: scale, y: scale)
             card.alpha = 1 - (abs(xFromCenter) / view.center.x)
+            // get the next Cell to add a FadeOut animation
+            let myIndexPath = IndexPath(row: curentIndex+1, section: 0)
+            let nextCell = collectionView.cellForItem(at: myIndexPath)
+            nextCell?.contentView.alpha = (abs(xFromCenter) / view.center.x)
+            // in the Ended State remove the card or reterned to the original postition
             if sender.state == UIGestureRecognizer.State.ended {
                 if card.center.x < 75 {
                     //Move off to the left side of the screen
                     UIView.animate(withDuration: 0.3) {
-                        //card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75 )
+                        card.center = CGPoint(x: card.center.x - 200, y: card.center.y + 75 )
                         card.alpha = 0
-                        self.removeCell()
+                        nextCell?.contentView.alpha = 1
+                        //self.removeCell()
+                        print("Remove item at index",self.curentIndex)
+                        self.curentIndex += 1
+                        print("Next item at index",self.curentIndex)
                     }
                     return
                 }
                 else if card.center.x > view.frame.width - 75 {
                     //Move off to the right side of the screen
                     UIView.animate(withDuration: 0.3) {
-                        //card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
+                        card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
                         card.alpha = 0
-                        self.removeCell()
+                        nextCell?.contentView.alpha = 1
+                        //self.removeCell()
+                        print("Remove item at index",self.curentIndex)
+                        self.curentIndex += 1
+                        print("Next item at index",self.curentIndex)
                     }
                     return
                 }
@@ -68,18 +85,25 @@ class OverlapCollectionViewController: UICollectionViewController {
                 UIView.animate(withDuration: 0.2) {
                     card.center = CGPoint(x: self.view.center.x , y: self.view.center.y - self.navbarSize)
                     card.alpha = 1
+                    nextCell?.contentView.alpha = 1
                     card.transform = CGAffineTransform.identity
                 }
             }
         }
     }
     
-    
-    
     @IBAction func didTapAdd(sender: AnyObject) {
-        numberOfItems += 1
-        let insertionIndex = Int(arc4random() % UInt32(max(numberOfItems, 1)))
-        collectionView?.insertItems(at:[IndexPath(item: insertionIndex, section: 0)])
+        let tempIndex = self.curentIndex - 1
+        let space = CGFloat(tempIndex*10)
+        print("space Added",space)
+        print("tempIndex",tempIndex)
+        UIView.animate(withDuration: 0.3) {
+            self.tabcard[tempIndex].center = CGPoint(x: self.view.center.x , y: self.view.center.y - self.navbarSize + space)
+            self.tabcard[tempIndex].alpha = 1
+            self.tabcard[tempIndex].transform = CGAffineTransform.identity
+        }
+        self.curentIndex -= 1
+        print("Item added at index: ",curentIndex)
     }
     
     @IBAction func didTapRemove(sender: AnyObject) {

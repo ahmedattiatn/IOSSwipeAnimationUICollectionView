@@ -25,6 +25,9 @@
                                     <rect key="frame" x="0.0" y="0.0" width="259" height="457"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="q" translatesAutoresizingMaskIntoConstraints="NO" id="hPv-lO-LOU">
+                                            <rect key="frame" x="0.0" y="0.0" width="259" height="457"/>
+                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a1g-vA-JhI">
                                             <rect key="frame" x="73.5" y="243.5" width="112" height="70"/>
                                             <constraints>
@@ -48,11 +51,15 @@
                                 <color key="backgroundColor" red="0.93333333330000001" green="0.93333333330000001" blue="0.93333333330000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="a1g-vA-JhI" firstAttribute="top" secondItem="44D-nw-kY4" secondAttribute="bottom" constant="6" id="D2G-qI-FHx"/>
+                                    <constraint firstItem="hPv-lO-LOU" firstAttribute="leading" secondItem="acb-7E-CU3" secondAttribute="leading" id="DDy-RU-tLa"/>
                                     <constraint firstItem="xRd-hS-wm6" firstAttribute="centerX" secondItem="a1g-vA-JhI" secondAttribute="centerX" id="NfF-3Y-seq"/>
+                                    <constraint firstItem="hPv-lO-LOU" firstAttribute="top" secondItem="acb-7E-CU3" secondAttribute="top" id="U6x-71-gbY"/>
                                     <constraint firstItem="a1g-vA-JhI" firstAttribute="centerY" secondItem="acb-7E-CU3" secondAttribute="centerY" constant="50" id="eha-ES-qIE"/>
                                     <constraint firstItem="44D-nw-kY4" firstAttribute="centerX" secondItem="a1g-vA-JhI" secondAttribute="centerX" id="iwu-To-j6b"/>
                                     <constraint firstItem="a1g-vA-JhI" firstAttribute="centerX" secondItem="acb-7E-CU3" secondAttribute="centerX" id="jMD-iT-dsZ"/>
+                                    <constraint firstAttribute="trailing" secondItem="hPv-lO-LOU" secondAttribute="trailing" id="kVO-VC-lKR"/>
                                     <constraint firstItem="44D-nw-kY4" firstAttribute="centerX" secondItem="a1g-vA-JhI" secondAttribute="centerX" id="m4p-1b-DFc"/>
+                                    <constraint firstAttribute="bottom" secondItem="hPv-lO-LOU" secondAttribute="bottom" id="osn-Ie-1Ar"/>
                                     <constraint firstItem="44D-nw-kY4" firstAttribute="top" secondItem="xRd-hS-wm6" secondAttribute="bottom" constant="10" id="tWY-Ip-z3k"/>
                                 </constraints>
                                 <size key="customSize" width="259" height="457"/>
@@ -73,7 +80,7 @@
                                 <action selector="didTapAddWithSender:" destination="5Ns-nB-lBO" id="zEn-4W-NXU"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Remove" id="SZ4-Tv-zfc">
+                        <barButtonItem key="rightBarButtonItem" id="SZ4-Tv-zfc">
                             <connections>
                                 <action selector="didTapRemoveWithSender:" destination="5Ns-nB-lBO" id="Gr1-VX-U51"/>
                             </connections>
@@ -105,5 +112,6 @@
     </scenes>
     <resources>
         <image name="balloon_0011" width="72" height="118"/>
+        <image name="q" width="480" height="852"/>
     </resources>
 </document>

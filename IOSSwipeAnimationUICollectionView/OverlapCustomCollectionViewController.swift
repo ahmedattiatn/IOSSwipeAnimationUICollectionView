@@ -57,17 +57,6 @@ class OverlapCustomCollectionViewController: UICollectionViewController {
                     }
                     return
                 }
-                
-                /*else if card.center.y  > view.frame.width - 75 {
-                 //Move off to the right side of the screen
-                 UIView.animate(withDuration: 0.3) {
-                 //card.center = CGPoint(x: card.center.x + 200, y: card.center.y + 75)
-                 card.alpha = 0
-                 self.removeCell()
-                 }
-                 return
-                 }*/
-                
                 //return the card to the Original place
                 UIView.animate(withDuration: 0.2) {
                     card.center = CGPoint(x: self.view.center.x , y: self.view.center.y - self.navbarSize)

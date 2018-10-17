@@ -10,7 +10,7 @@ import UIKit
 
 class OverlapCollectionViewLayout: UICollectionViewLayout {
     
-    var preferredSize = CGSize(width:300, height:500)
+    var preferredSize = CGSize(width:280, height:500)
     //var preferredSize = CGSize(width:300, height:400)
     
     
