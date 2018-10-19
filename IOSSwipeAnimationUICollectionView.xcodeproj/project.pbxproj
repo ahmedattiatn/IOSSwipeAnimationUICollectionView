@@ -17,6 +17,7 @@
 		668CD6AA2175EBAE00BEF0CB /* OverlapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668CD6A92175EBAE00BEF0CB /* OverlapCollectionViewCell.swift */; };
 		668CD6AC2175EBE000BEF0CB /* OverlapCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668CD6AB2175EBE000BEF0CB /* OverlapCollectionViewLayout.swift */; };
 		668CD6AF2176250500BEF0CB /* OverlapCustomCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 668CD6AE2176250500BEF0CB /* OverlapCustomCollectionViewController.swift */; };
+		66EA58E32179FA9A005A45C1 /* LikeGooglePrimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 66EA58E22179FA9A005A45C1 /* LikeGooglePrimer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		668CD6A92175EBAE00BEF0CB /* OverlapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapCollectionViewCell.swift; sourceTree = "<group>"; };
 		668CD6AB2175EBE000BEF0CB /* OverlapCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapCollectionViewLayout.swift; sourceTree = "<group>"; };
 		668CD6AE2176250500BEF0CB /* OverlapCustomCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OverlapCustomCollectionViewController.swift; sourceTree = "<group>"; };
+		66EA58E22179FA9A005A45C1 /* LikeGooglePrimer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LikeGooglePrimer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 			children = (
 				668CD6AD2175EC6700BEF0CB /* CustomViewLayout */,
 				668CD6A72175EB6600BEF0CB /* OverlapCollectionViewController.swift */,
+				66EA58E22179FA9A005A45C1 /* LikeGooglePrimer.swift */,
 				668CD6AE2176250500BEF0CB /* OverlapCustomCollectionViewController.swift */,
 				668CD67D2175EACB00BEF0CB /* Main.storyboard */,
 				668CD6A92175EBAE00BEF0CB /* OverlapCollectionViewCell.swift */,
@@ -277,6 +280,7 @@
 				668CD6A82175EB6600BEF0CB /* OverlapCollectionViewController.swift in Sources */,
 				668CD6AA2175EBAE00BEF0CB /* OverlapCollectionViewCell.swift in Sources */,
 				668CD6AF2176250500BEF0CB /* OverlapCustomCollectionViewController.swift in Sources */,
+				66EA58E32179FA9A005A45C1 /* LikeGooglePrimer.swift in Sources */,
 				668CD67A2175EACB00BEF0CB /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
